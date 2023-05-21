@@ -79,7 +79,6 @@ RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 #
 COPY --from=builder --chown=nextjs:nodejs /app/.env          ./.env
-COPY --from=builder --chown=nextjs:nodejs /app/config        ./config
 COPY --from=builder --chown=nextjs:nodejs /app/package-lock.json    ./package-lock.json
 COPY --from=builder --chown=nextjs:nodejs /app/package.json  ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules  ./node_modules
